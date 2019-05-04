@@ -1,0 +1,70 @@
+// Competency: Function + Looping + Conditional
+/*
+Instruksi
+=========
+Buatlah sebuah function bernama drawLadder yang menerima satu parameter bernama row, dan akan menampilkan x ke samping di baris ganjil, dan o di baris genap. Function drawLadder tidak perlu me-return apapun.
+Function tidak perlu mengembalikan nilai (tidak perlu ada return).
+Contoh 1
+--------
+input: 3
+x
+oo
+xxx
+oo
+x
+
+Contoh 2
+--------
+input: 6
+tampilan:
+x
+oo
+xxx
+oooo
+xxxxx
+oooooo
+xxxxx
+oooo
+xxx
+oo
+x
+
+*/
+
+function drawLadder(row) {
+  // hanya code disini
+  var baru = ''
+  for(var i = 1; i <= row; i++){
+    for(var j = 1; j <= i; j++){
+      if(i % 2 == 0){
+        baru += 'o'
+      }
+      else {
+        baru += 'x'
+      }
+    }
+    baru+= '\n'
+    if(i == row){ 
+      var angka = 0;
+      i -= row;
+      if(row % 2 == 1){  
+        angka =  1 
+      }
+      for(var i = 1; i <= row; i++){
+        for(var j = row; j > i; j--){
+          if(i % 2 == angka){
+            baru += 'o'
+          }
+          else {
+            baru += 'x'
+          }
+        }
+        baru += '\n'
+        }
+    }
+  }
+  console.log(baru)
+}
+
+drawLadder(6);
+drawLadder(3);
